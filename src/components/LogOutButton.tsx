@@ -15,11 +15,11 @@ function LogOutButton() {
 
     await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate network request
 
-    const errorMessage = await logOutAction(); // Replace this with real error checking
-
+    const {errorMessage} = await logOutAction(); // Replace this with real error checking
+    console.log("errorMessage", errorMessage);
     if (!errorMessage) {
       toast.success("You have been logged out successfully.");
-      router.push("/login");
+      router.push("/");
     } else {
       toast.error("Something went wrong while logging out.");
     }
